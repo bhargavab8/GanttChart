@@ -32,7 +32,8 @@
 		
 		render(val) {
 				
-			this.$svg.innerHTML = '<div id="chart_div"></div>';			
+			this.$svg.innerHTML = '<div id="chart_div"></div>';	
+			var chart = new google.visualization.Gantt(document.getElementById('ganttContainer'));
 	  	}
 		  
 		onCustomWidgetBeforeUpdate(changedProperties) {
