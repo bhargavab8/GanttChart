@@ -27,8 +27,10 @@
 		}
 		
 		render(val) {
-			this.$svg.innerHTML = '<text class="percentage" text-anchor="middle" alignment-baseline="middle" font-size="140" font-weight="bold">' + val + '</text>';
-	  }
+			this.$svg.innerHTML = '<div id="chart_div"></div>';
+			var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+			chart.innerHTML = '<text font-size="90">Helloo</text>'
+	  	}
 		  
 		onCustomWidgetBeforeUpdate(changedProperties) {
 			this._props = { ...this._props, ...changedProperties };
