@@ -29,10 +29,9 @@
 			//Dynamically import the library and append it to the document header
 			const script = document.createElement('script');
     			script.type = 'text/javascript';
-    			script.async = true;
+    			script.async = false;
     			script.onload = function () {
 				gLibLoaded = true;
-				this.render("gGanttExample");
 			}
 			script.src = 'https://www.gstatic.com/charts/loader.js';
 
@@ -47,10 +46,9 @@
 			//Dynamically import the library and append it to the document header
 			const script = document.createElement('script');
     			script.type = 'text/javascript';
-    			script.async = true;
+    			script.async = false;
     			script.onload = function () {
 				jQryLoaded = true;
-				this.render("gGanttExample");
 			}
 			script.src = 'https://code.jquery.com/jquery-3.4.1.js';
 
