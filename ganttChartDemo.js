@@ -50,8 +50,10 @@
       					var options = {
         					height: 275
       					};
+					
+					const ganttCont = document.querySelector('sapCustomWidgetWebComponent').shadowRoot.querySelector("ganttContainer");
 
-      					var chart = new google.visualization.Gantt(this.$div);
+      					var chart = new google.visualization.Gantt(ganttCont);
 
       					chart.draw(data, options);
 				});	
