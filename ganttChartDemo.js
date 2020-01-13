@@ -3,7 +3,7 @@
 	template.innerHTML = `
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<div class="container">
-		  <div class="row">
+		  <div class="ganttContainer" id="ganttContainer">
 		    <svg viewBox="0 0 1000 500">
 		    </svg>
 		   </div>
@@ -28,7 +28,7 @@
 		
 		render(val) {
 			this.$svg.innerHTML = '<div id="chart_div"></div>';
-			var chart = document.getElementById('chart_div');
+			var chart = document.getElementById('ganttContainer');
 			chart.innerHTML = '<text font-size="90">Helloo</text>'
 	  	}
 		  
