@@ -51,7 +51,7 @@
         					height: 275
       					};
 					
-					const ganttCont = document.querySelector('sapCustomWidgetWebComponent').shadowRoot.querySelector("ganttContainer");
+					const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector(".ganttContainer");
 
       					var chart = new google.visualization.Gantt(ganttCont);
 
