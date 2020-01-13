@@ -28,7 +28,7 @@
 		
 		render(val) {
 			this.$svg.innerHTML = '<div id="chart_div"></div>';
-			var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+			var chart = document.getElementById('chart_div');
 			chart.innerHTML = '<text font-size="90">Helloo</text>'
 	  	}
 		  
