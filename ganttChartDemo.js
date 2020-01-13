@@ -1,16 +1,8 @@
 (function() { 
 	let template = document.createElement("template");
 	template.innerHTML = `
-		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-		<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
-		<script type="text/javascript">
-    			// Load the Visualization API and the piechart package.
-    			google.charts.load('current', {'packages':['gantt']});
-		</script>
 		<div class="container">
-		  <div class="ganttContainer" id="ganttContainer">
-		    <svg viewBox="0 0 1000 500">
-		    </svg>
+		  <div class="ganttContainer" id="ganttContainer">	    
 		   </div>
 		</div>
 	`;
@@ -21,8 +13,6 @@
 			let shadowRoot = this.attachShadow({mode: "open"});
 			shadowRoot.appendChild(template.content.cloneNode(true));
 			
-			this.$svg = shadowRoot.querySelector('svg');
-			
 			this.addEventListener("click", event => {
 				var event = new Event("onClick");
 				this.dispatchEvent(event);
@@ -32,9 +22,17 @@
 		}
 		
 		render(val) {
-				
-			this.$svg.innerHTML = '<div id="chart_div"></div>';	
-			var chart = new google.visualization.Gantt(document.getElementById('ganttContainer'));
+			const script = document.createElement('script');
+    			script.type = 'text/javascript';
+    			script.async = true;
+    			script.onload = function () {
+				// Load the Visualization API and the piechart package.
+    				google.charts.load('current', {'packages':['gantt']});
+			}
+			script.src = 'https://www.gstatic.com/charts/loader.js';
+
+    			//Append it to the document header
+    			document.head.appendChild(script);
 	  	}
 		  
 		onCustomWidgetBeforeUpdate(changedProperties) {
