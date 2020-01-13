@@ -2,6 +2,7 @@
 	let template = document.createElement("template");
 	template.innerHTML = `
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
 		<script type="text/javascript">
     			// Load the Visualization API and the piechart package.
     			google.charts.load('current', {'packages':['gantt']});
