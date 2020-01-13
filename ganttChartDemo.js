@@ -1,10 +1,11 @@
 (function() { 
 	let template = document.createElement("template");
 	template.innerHTML = `
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<div class="container">
 		  <div class="row">
 		    <svg viewBox="0 0 1000 500">
-			  </svg>
+		    </svg>
 		   </div>
 		</div>
 	`;
