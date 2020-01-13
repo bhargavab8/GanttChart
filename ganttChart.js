@@ -1,11 +1,13 @@
 (function() { 
 	let template = document.createElement("template");
 	template.innerHTML = `
-		<div id='text_div'>Gantt Chart</div>
-		<div id="chart_div"></div>		  
+		<div class="container">Gantt Chart
+		  <div class="chart_div" id="chart_div">
+		  </div>
+		</div>	
 	`;
 
-	class GanttChart extends HTMLElement {
+	class Box extends HTMLElement {
 		constructor() {
 			super(); 
 			let shadowRoot = this.attachShadow({mode: "open"});
@@ -21,17 +23,26 @@
 			this._props = {};
 		}
 		
-		render(gcData) {
-			this.$div.innerHTML = '<text id="gcData_text">' + gcData + '</text>'
-    		}
+		render(val) {
+			this.$div.innerHTML = '<text class="title" text-anchor="middle" alignment-baseline="middle" font-size="90" font-weight="normal">' + val + '</text>';
+			
+		}
 		  
 		onCustomWidgetBeforeUpdate(changedProperties) {
 			this._props = { ...this._props, ...changedProperties };
 		}
 
 		onCustomWidgetAfterUpdate(changedProperties) {
-			if ("gcData" in changedProperties) {
-				this.$gcData = changedProperties["gcData"];
+			if ("value" in changedProperties) {
+				this.$value = changedProperties["value"];
+			}
+			
+			if ("info" in changedProperties) {
+				this.$info = changedProperties["info"];
+			}
+			
+			if ("color" in changedProperties) {
+				this.$color = changedProperties["color"];
 			}
 			
 			this.render(this.$gcData);
