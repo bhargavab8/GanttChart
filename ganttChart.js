@@ -11,7 +11,7 @@
 			let shadowRoot = this.attachShadow({mode: "open"});
 			shadowRoot.appendChild(template.content.cloneNode(true));
 			
-			this.$div = shadowRoot.querySelector('svg');
+			this.$div = shadowRoot.querySelector('chart_div');
 			
 			this.addEventListener("click", event => {
 				var event = new Event("onClick");
