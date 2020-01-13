@@ -1,7 +1,7 @@
 (function() { 
 	let template = document.createElement("template");
 	template.innerHTML = `
-		<div class="ganttContainer" id="ganttContainer"></div>
+		<div id="ganttContainer"></div>
 	`;
 
 	class GanttChart extends HTMLElement {
@@ -54,7 +54,7 @@
       						}
       					};
 					
-					const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector(".ganttContainer");
+					const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttContainer");
 
       					var chart = new google.visualization.Gantt(ganttCont);
 
