@@ -27,9 +27,11 @@
 		}
 		
 		render(val) {
+			// Load the Visualization API and the piechart package.
+   			google.charts.load('current', {'packages':['gantt']});
+			
 			this.$svg.innerHTML = '<div id="chart_div"></div>';
-			var chart = document.getElementById('ganttContainer');
-			chart.innerHTML = '<text font-size="90">Helloo</text>'
+			var chart = new google.visualization.Gantt(document.getElementById('ganttContainer'));
 	  	}
 		  
 		onCustomWidgetBeforeUpdate(changedProperties) {
