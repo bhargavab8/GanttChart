@@ -1,0 +1,34 @@
+{
+    "cols": [
+      {"id": "ID", "label": "Task ID", "type": "string"},
+      {"id": "Name", "label": "Task Name", "type": "string"},
+      {"id": "Resource", "label": "Resource", "type": "string"},
+      {"id": "Start", "label": "Start Date", "type": "date"},
+      {"id": "End", "label": "End Date", "type": "date"},
+      {"id": "Duration", "label": "Duration", "type": "number"},
+      {"id": "Percent", "label": "Percentage complete", "type": "number"},
+      {"id": "Dependencies", "label": "Dependencies", "type": "string"}
+    ],
+    "rows": [
+      {"c":[
+        {"v": "T101"},
+        {"v": "WO:1 - create Design"},
+        {"v": "Engineer"},
+        {"v": null},
+        {"v": null},
+        {"v": 2.0},
+        {"v": 2.0},
+        {"v": null}
+      ]},
+      {"c":[
+        {"v": "T102"},
+        {"v": "WO:1 - Gain Design Approval"},
+        {"v": "Engineer"},
+        {"v": "Date(2019, 1)"},
+        {"v": "Date(2019, 2)"},
+        {"v": 3.0},
+        {"v": 0.0},
+        {"v": "T101"}
+      ]}
+    ]
+  }
