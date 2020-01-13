@@ -2,6 +2,10 @@
 	let template = document.createElement("template");
 	template.innerHTML = `
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+    			// Load the Visualization API and the piechart package.
+    			google.charts.load('current', {'packages':['gantt']});
+		</script>
 		<div class="container">
 		  <div class="ganttContainer" id="ganttContainer">
 		    <svg viewBox="0 0 1000 500">
@@ -30,8 +34,7 @@
 			// Load the Visualization API and the piechart package.
    			google.charts.load('current', {'packages':['gantt']});
 			
-			this.$svg.innerHTML = '<div id="chart_div"></div>';
-			var chart = new google.visualization.Gantt(document.getElementById('ganttContainer'));
+			this.$svg.innerHTML = '<div id="chart_div"></div>';			
 	  	}
 		  
 		onCustomWidgetBeforeUpdate(changedProperties) {
