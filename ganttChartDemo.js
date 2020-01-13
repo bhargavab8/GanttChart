@@ -40,15 +40,18 @@
       					data.addColumn('string', 'Dependencies');
 
       					data.addRows([
-        					['Research', 'Find sources', new Date(2015, 0, 1), new Date(2015, 0, 5), null,  100,  null],
-        					['Write', 'Write paper', null, new Date(2015, 0, 9), 259200000, 25, 'Research,Outline'],
-          					['Cite', 'Create bibliography', null, new Date(2015, 0, 7), 86400000, 20, 'Research'],
-        					['Complete', 'Hand in paper', null, new Date(2015, 0, 10), 86400000, 0, 'Cite,Write'],
-        					['Outline', 'Outline paper', null, new Date(2015, 0, 6), 86400000, 100, 'Research']
+        					['Research', 'Find sources', null, null, 345600000,  100,  null],
+        					['Write', 'Write paper', null, null, 259200000, 25, 'Research,Outline'],
+          					['Cite', 'Create bibliography', null, null, 86400000, 20, 'Research'],
+        					['Complete', 'Hand in paper', null, null, 86400000, 0, 'Cite,Write'],
+        					['Outline', 'Outline paper', null, null, 86400000, 100, 'Research']
       					]);
 
       					var options = {
-        					height: 275
+        					height: 275,
+						gantt: {
+        						defaultStartDateMillis: new Date(2019, 1, 1)
+      						}
       					};
 					
 					const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector(".ganttContainer");
