@@ -31,9 +31,7 @@
 		}
 		
 		render(val) {
-			// Load the Visualization API and the piechart package.
-   			google.charts.load('current', {'packages':['gantt']});
-			
+				
 			this.$svg.innerHTML = '<div id="chart_div"></div>';			
 	  	}
 		  
