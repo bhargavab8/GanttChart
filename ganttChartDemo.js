@@ -52,7 +52,7 @@
         					height: 275
       					};
 
-      					var chart = new google.visualization.Gantt(document.querySelector('.ganttContainer'));
+      					var chart = new google.visualization.Gantt(document.querySelector(".ganttContainer"));
 
       					chart.draw(data, options);
 				});	
