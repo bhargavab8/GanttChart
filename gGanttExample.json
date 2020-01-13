@@ -2,7 +2,6 @@
     "cols": [
       {"id": "ID", "label": "Task ID", "type": "string"},
       {"id": "Name", "label": "Task Name", "type": "string"},
-      {"id": "Resource", "label": "Resource", "type": "string"},
       {"id": "Start", "label": "Start Date", "type": "date"},
       {"id": "End", "label": "End Date", "type": "date"},
       {"id": "Duration", "label": "Duration", "type": "number"},
@@ -12,23 +11,48 @@
     "rows": [
       {"c":[
         {"v": "T101"},
-        {"v": "WO:1 - create Design"},
-        {"v": "Engineer"},
+        {"v": "Find sources"},
+        {"v": new Date(2019, 0, 1)},
+        {"v": new Date(2015, 0, 5)},
         {"v": null},
-        {"v": null},
-        {"v": 2.0},
-        {"v": 2.0},
+        {"v": 100},
         {"v": null}
       ]},
       {"c":[
         {"v": "T102"},
-        {"v": "WO:1 - Gain Design Approval"},
-        {"v": "Engineer"},
-        {"v": "Date(2019, 1)"},
-        {"v": "Date(2019, 2)"},
-        {"v": 3.0},
-        {"v": 0.0},
+        {"v": "Outline paper"},
+        {"v": null,
+        {"v": new Date(2019, 0, 6)},
+        {"v": 86400000},
+        {"v": 100},
         {"v": "T101"}
+      ]}, 
+      {"c":[
+        {"v": "T103"},
+        {"v": "Create bibliography"},
+        {"v": null,
+        {"v": new Date(2019, 0, 7)},
+        {"v": 86400000},
+        {"v": 20},
+        {"v": "T101"}
+      ]},  
+      {"c":[
+        {"v": "T104"},
+        {"v": "Write paper"},
+        {"v": null,
+        {"v": new Date(2019, 0, 9)},
+        {"v": 259200000},
+        {"v": 25},
+        {"v": "T101,T102"}
+      ]},
+      {"c":[
+        {"v": "T105"},
+        {"v": "Hand in paper"},
+        {"v": null,
+        {"v": new Date(2019, 0, 10)},
+        {"v": 86400000},
+        {"v": 0},
+        {"v": "T103,T104"}
       ]}
     ]
   }
