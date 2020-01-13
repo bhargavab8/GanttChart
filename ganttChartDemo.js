@@ -1,10 +1,7 @@
 (function() { 
 	let template = document.createElement("template");
 	template.innerHTML = `
-		<div class="container">
-		  <div class="ganttContainer" id="ganttContainer">	    
-		   </div>
-		</div>
+		<div class="ganttContainer" id="ganttContainer"></div>
 	`;
 
 	class GanttChart extends HTMLElement {
@@ -13,6 +10,8 @@
 			let shadowRoot = this.attachShadow({mode: "open"});
 			shadowRoot.appendChild(template.content.cloneNode(true));
 			
+			this.$div = shadowRoot.querySelector('div');
+				
 			this.addEventListener("click", event => {
 				var event = new Event("onClick");
 				this.dispatchEvent(event);
@@ -52,7 +51,7 @@
         					height: 275
       					};
 
-      					var chart = new google.visualization.Gantt(document.querySelector(".ganttContainer"));
+      					var chart = new google.visualization.Gantt(this.$div);
 
       					chart.draw(data, options);
 				});	
