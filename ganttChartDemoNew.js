@@ -108,7 +108,7 @@
     			};
 
     			// Instantiate and draw our chart, passing in some options.
-    			const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttContainer");
+    			const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttChartNew");
 			var chart = new google.visualization.Gantt(ganttCont);
 			chart.draw(data, options);
     		    }).fail(function(){console.log("Failed")});
