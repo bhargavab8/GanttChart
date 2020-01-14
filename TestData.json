@@ -1,58 +1,49 @@
 {
-    "cols": [
-      {"id": "ID", "label": "Task ID", "type": "string"},
-      {"id": "Name", "label": "Task Name", "type": "string"},
-      {"id": "Start", "label": "Start Date", "type": "date"},
-      {"id": "End", "label": "End Date", "type": "date"},
-      {"id": "Duration", "label": "Duration", "type": "number"},
-      {"id": "Percent", "label": "Percentage complete", "type": "number"},
-      {"id": "Dependencies", "label": "Dependencies", "type": "string"}
-    ],
     "rows": [
       {"c":[
-        {"v": "T101"},
-        {"v": "Find sources"},
-        {"v": null},
-        {"v": null},
-        {"v": 345600000},
-        {"v": 100},
-        {"v": null}
+        {"ID": "T101"},
+        {"Name": "Find sources"},
+        {"Start": null},
+        {"End": null},
+        {"Duration": 345600000},
+        {"Percent": 100},
+        {"Dependencies": null}
       ]},
       {"c":[
-        {"v": "T102"},
-        {"v": "Outline paper"},
-        {"v": null},
-        {"v": null},
-        {"v": 86400000},
-        {"v": 100},
-        {"v": "T101"}
+        {"ID": "T102"},
+        {"Name": "Outline paper"},
+        {"Start": null},
+        {"End": null},
+        {"Duration": 86400000},
+        {"Percent": 100},
+        {"Dependencies": "T101"}
       ]}, 
       {"c":[
-        {"v": "T103"},
-        {"v": "Create bibliography"},
-        {"v": null},
-        {"v": null},
-        {"v": 86400000},
-        {"v": 20},
-        {"v": "T101"}
+        {"ID": "T103"},
+        {"Name": "Create bibliography"},
+        {"Start": null},
+        {"End": null},
+        {"Duration": 86400000},
+        {"Percent": 20},
+        {"Dependencies": "T101"}
       ]},  
       {"c":[
-        {"v": "T104"},
-        {"v": "Write paper"},
-        {"v": null},
-        {"v": null},
-        {"v": 259200000},
-        {"v": 25},
-        {"v": "T101,T102"}
+        {"ID": "T104"},
+        {"Name": "Write paper"},
+        {"Start": null},
+        {"End": null},
+        {"Duration": 259200000},
+        {"Percent": 25},
+        {"Dependencies": "T101,T102"}
       ]},
       {"c":[
-        {"v": "T105"},
-        {"v": "Hand in paper"},
-        {"v": null},
-        {"v": null},
-        {"v": 86400000},
-        {"v": 0},
-        {"v": "T103,T104"}
+        {"ID": "T105"},
+        {"Name": "Hand in paper"},
+        {"Start": null},
+        {"End": null},
+        {"Duration": 86400000},
+        {"Percent": 0},
+        {"Dependencies": "T103,T104"}
       ]}
     ]
   }
