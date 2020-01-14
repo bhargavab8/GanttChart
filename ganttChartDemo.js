@@ -24,8 +24,18 @@
 			const script = document.createElement('script');
     			script.type = 'text/javascript';
     			script.async = true;
-    			script.onload = function () {
-				// Load the Visualization API and the piechart package.
+    			script.onload = this.drawChart();
+			script.src = 'https://www.gstatic.com/charts/loader.js';
+    			//Append it to the document header
+    			document.head.appendChild(script);
+	  	}
+		
+		daysToMilliseconds(days) {
+      			return days * 24 * 60 * 60 * 1000;
+    		}
+		
+		drawChart(){
+		    // Load the Visualization API and the piechart package.
     				google.charts.load('current', {'packages':['gantt']});
 				
 				// Set a callback to run when the Google Visualization API is loaded.
@@ -60,19 +70,6 @@
 
       					chart.draw(data, options);
 				});	
-			}
-			script.src = 'https://www.gstatic.com/charts/loader.js';
-
-    			//Append it to the document header
-    			document.head.appendChild(script);
-	  	}
-		
-		daysToMilliseconds(days) {
-      			return days * 24 * 60 * 60 * 1000;
-    		}
-		
-		drawChart(){
-			
 		}
 		  
 		onCustomWidgetBeforeUpdate(changedProperties) {
@@ -83,7 +80,7 @@
 			if ("value" in changedProperties) {
 				this.$value = changedProperties["value"];
 			}
-      this.render(this.$value);
+      			this.render(this.$value);
 		}
 	}
 	
