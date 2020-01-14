@@ -1,7 +1,7 @@
 (function() { 
 	let template = document.createElement("template");
 	template.innerHTML = `
-		<div id="ganttContainer"></div>
+		<div id="ganttContainer" class="ganttContainer"></div>
 	`;
 	
 	let gLibLoaded;
@@ -57,7 +57,7 @@
     					};
 
     					// Instantiate and draw our chart, passing in some options.
-    					const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttContainer");
+    					const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector(".ganttContainer");
 					var chart = new google.visualization.Gantt(ganttCont);
 					chart.draw(data, options);
     				    }).fail(function(){console.log("Failed")});					
