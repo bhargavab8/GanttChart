@@ -43,35 +43,24 @@
 				
 				// Set a callback to run when the Google Visualization API is loaded.
     				google.charts.setOnLoadCallback(function() {
-					var data = new google.visualization.DataTable();
-      					data.addColumn('string', 'Task ID');
-      					data.addColumn('string', 'Task Name');
-      					data.addColumn('date', 'Start Date');
-	      				data.addColumn('date', 'End Date');
-      					data.addColumn('number', 'Duration');
-      					data.addColumn('number', 'Percent Complete');
-      					data.addColumn('string', 'Dependencies');
+				    $.getJSON("https://vishwapkm-ey.github.io/GanttChart/gGanttExample.json").done(function (jsonData) {
+    	
+					// Create our data table out of JSON data loaded from server.
+    					var data = new google.visualization.DataTable(jsonData);
 
-      					data.addRows([
-        					['Research', 'Find sources', null, null, 345600000,  100,  null],
-        					['Write', 'Write paper', null, null, 259200000, 25, 'Research,Outline'],
-          					['Cite', 'Create bibliography', null, null, 86400000, 20, 'Research'],
-        					['Complete', 'Hand in paper', null, null, 86400000, 0, 'Cite,Write'],
-        					['Outline', 'Outline paper', null, null, 86400000, 100, 'Research']
-      					]);
+    					var options = {
+      					    //explorer: {axis: 'horizontal'}
+      					    height: 275,
+      					    gantt: {
+        					defaultStartDateMillis: new Date(2019, 1, 1)
+      					    }
+    					};
 
-      					var options = {
-        					height: 275,
-						gantt: {
-        						defaultStartDateMillis: new Date(2019, 1, 1)
-      						}
-      					};
-					
-					const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttContainer");
-
-      					var chart = new google.visualization.Gantt(ganttCont);
-
-      					chart.draw(data, options);
+    					// Instantiate and draw our chart, passing in some options.
+    					const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttContainer");
+					var chart = new google.visualization.Gantt(ganttCont);
+					chart.draw(data, options);
+    				    }).fail(function(){console.log("Failed")});					
 				});
 			    }	
 			    jQScript.src = 'https://code.jquery.com/jquery-3.4.1.js';
