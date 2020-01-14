@@ -24,8 +24,7 @@
 			const script = document.createElement('script');
     			script.type = 'text/javascript';
     			script.async = true;
-    			script.onload = this.drawChart();
-			function () {
+    			script.onload = function () {
 				// Load the Visualization API and the piechart package.
     				google.charts.load('current', {'packages':['gantt']});
 				
