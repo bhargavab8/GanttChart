@@ -89,6 +89,31 @@
                     document.head.appendChild(script);
                 }
             }
+	    else{
+	        // Load the Visualization API and the ganttchart package.
+    		google.charts.load('current', {'packages':['gantt']});
+				
+		//Set a callback to run when the Google Visualization API is loaded.
+    		google.charts.setOnLoadCallback(function() {
+		    $.getJSON(val).done(function (jsonData) {
+    			// Create our data table out of JSON data loaded from server.
+    			var data = new google.visualization.DataTable(jsonData);
+
+    			var options = {
+      			    //explorer: {axis: 'horizontal'}
+      			    height: 275,
+      			    gantt: {
+        			defaultStartDateMillis: new Date(2019, 1, 1)
+      			    }
+    			};
+
+    			// Instantiate and draw our chart, passing in some options.
+    			const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttContainer");
+			var chart = new google.visualization.Gantt(ganttCont);
+			chart.draw(data, options);
+    		    }).fail(function(){console.log("Failed")});
+		}
+	    }
         }
 
         onCustomWidgetBeforeUpdate(changedProperties) {
