@@ -4,8 +4,8 @@
 		    <div id="ganttChartNew"></div>
 	  `;
     
-    let gLibLoaded;
-	  let jQryLibLoaded;
+    let gLibLoaded = false;
+    let jQryLibLoaded = false;
     
     class GanttChartNew extends HTMLElement {
 		    constructor() {
