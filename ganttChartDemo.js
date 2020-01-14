@@ -8,29 +8,36 @@
 	let jQryLibLoaded;
 	
 	class GanttChart extends HTMLElement {
-		constructor() {
-			super(); 
-			let shadowRoot = this.attachShadow({mode: "open"});
-			shadowRoot.appendChild(template.content.cloneNode(true));
+	    constructor() {
+		super(); 
+		let shadowRoot = this.attachShadow({mode: "open"});
+		shadowRoot.appendChild(template.content.cloneNode(true));
 			
-			this.$div = shadowRoot.querySelector('div');
+		this.$div = shadowRoot.querySelector('div');
 				
-			this.addEventListener("click", event => {
-				var event = new Event("onClick");
-				this.dispatchEvent(event);
-			});
+		this.addEventListener("click", event => {
+		    var event = new Event("onClick");
+		    this.dispatchEvent(event);
+		});
 			
-			this._props = {};
-		}
+		this._props = {};
+	    }
 		
-		render(val) {
-		    if(!gLibLoaded){
-			const script = document.createElement('script');
-    			script.type = 'text/javascript';
-    			script.async = true;
-    			script.onload = function () {
-				gLibLoaded = true;
-				
+	    render(val) {
+	        if(!gLibLoaded){
+		    const script = document.createElement('script');
+    		    script.type = 'text/javascript';
+    		    script.async = true;
+    		    script.onload = function () {
+			gLibLoaded = true;
+			
+			if(!jQryLibLoaded){
+			    const jQScript = document.createElement('script');
+    		            jQScript.type = 'text/javascript';
+    		    	    jQScript.async = true;
+    		    	    jQScript.onload = function () {
+				jQryLibLoaded = true;
+				    
 				// Load the Visualization API and the piechart package.
     				google.charts.load('current', {'packages':['gantt']});
 				
@@ -65,33 +72,32 @@
       					var chart = new google.visualization.Gantt(ganttCont);
 
       					chart.draw(data, options);
-				});	
-			}
-			script.src = 'https://www.gstatic.com/charts/loader.js';
+				});
+			    }	
+			    jQScript.src = 'https://code.jquery.com/jquery-3.4.1.js';
 
-    			//Append it to the document header
-    			document.head.appendChild(script);
-		    }
-	  	}
-		
-		daysToMilliseconds(days) {
-      			return days * 24 * 60 * 60 * 1000;
-    		}
-		
-		drawChart(){
+    			    //Append it to the document header
+    			    document.head.appendChild(jQScript);    	
+			}
 			
-		}
-		  
-		onCustomWidgetBeforeUpdate(changedProperties) {
-			this._props = { ...this._props, ...changedProperties };
-		}
+		    }
+		    script.src = 'https://www.gstatic.com/charts/loader.js';
 
-		onCustomWidgetAfterUpdate(changedProperties) {
-			if ("value" in changedProperties) {
-				this.$value = changedProperties["value"];
-			}
-      			this.render(this.$value);
+    		    //Append it to the document header
+    		    document.head.appendChild(script);
 		}
+	    }
+		
+     	    onCustomWidgetBeforeUpdate(changedProperties) {
+		this._props = { ...this._props, ...changedProperties };
+	    }
+
+	    onCustomWidgetAfterUpdate(changedProperties) {
+		if ("value" in changedProperties) {
+			this.$value = changedProperties["value"];
+		}
+		this.render(this.$value);
+     	    }
 	}
 	
 	customElements.define("com-demo-gantt", GanttChart);
