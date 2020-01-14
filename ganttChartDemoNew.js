@@ -99,5 +99,5 @@
             this.render(this.$value);
         }
     }
-	  customElements.define("com-demo-ganttDemoNew", GanttChartNew);
+	  customElements.define("com-demo-ganttChartNew", GanttChartNew);
 })();
