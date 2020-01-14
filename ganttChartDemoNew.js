@@ -19,7 +19,21 @@
 			      });
 			      this._props = {};
 		    }
-		
+	
+	loadJQuery(){
+	    if(!jQryLibLoaded){
+		const jQScript = document.createElement('script');
+                jQScript.type = 'text/javascript';
+                jQScript.async = true;
+                jQScript.onload = function () {
+                    jQryLibLoaded = true;
+		}
+		jQScript.src = 'https://code.jquery.com/jquery-3.4.1.js';
+    		//Append it to the document header
+    		document.head.appendChild(jQScript);  	    
+	    }
+	}
+	    
         render(val) {
             if(val===''){
                 if(!gLibLoaded){
@@ -85,6 +99,7 @@
             if ("value" in changedProperties) {
                 this.$value = changedProperties["value"];
             }
+	    this.loadJQuery();	
             this.render(this.$value);
         }
     }
