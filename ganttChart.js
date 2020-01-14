@@ -1,7 +1,7 @@
 (function() { 
 	let template = document.createElement("template");
 	template.innerHTML = `
-		<div id="ganttContainer"></div>
+		<div id="ganttChart"></div>
 	`;
 
 	class GanttChart extends HTMLElement {
@@ -24,7 +24,8 @@
 			const script = document.createElement('script');
     			script.type = 'text/javascript';
     			script.async = true;
-    			script.onload = function () {
+    			script.onload = this.drawChart();
+			function () {
 				// Load the Visualization API and the piechart package.
     				google.charts.load('current', {'packages':['gantt']});
 				
@@ -54,7 +55,7 @@
       						}
       					};
 					
-					const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttContainer");
+					const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttChart");
 
       					var chart = new google.visualization.Gantt(ganttCont);
 
