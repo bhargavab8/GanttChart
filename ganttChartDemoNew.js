@@ -7,7 +7,7 @@
     let gLibLoaded;
 	  let jQryLibLoaded;
     
-    class GanttChart extends HTMLElement {
+    class GanttChartNew extends HTMLElement {
 		    constructor() {
 			      super(); 
 			      let shadowRoot = this.attachShadow({mode: "open"});
@@ -99,5 +99,5 @@
             this.render(this.$value);
         }
     }
-	  customElements.define("com-demo-gantt", GanttChart);
+	  customElements.define("com-demo-ganttDemoNew", GanttChartNew);
 })();
