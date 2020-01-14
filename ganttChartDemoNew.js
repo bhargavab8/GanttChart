@@ -112,7 +112,7 @@
 			var chart = new google.visualization.Gantt(ganttCont);
 			chart.draw(data, options);
     		    }).fail(function(){console.log("Failed")});
-		}
+	        }); 
 	    }
         }
 
