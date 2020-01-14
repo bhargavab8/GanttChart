@@ -32,12 +32,13 @@
     				google.charts.setOnLoadCallback(function() {
 					var data = new google.visualization.DataTable();
       					data.addColumn('string', 'Task ID');
-      					data.addColumn('string', 'Task Name');
-      					data.addColumn('date', 'Start Date');
-	      				data.addColumn('date', 'End Date');
-      					data.addColumn('number', 'Duration');
-      					data.addColumn('number', 'Percent Complete');
-      					data.addColumn('string', 'Dependencies');
+					data.addColumn('string', 'Task Name');
+					data.addColumn('string', 'Resource');
+					data.addColumn('date', 'Start Date');
+					data.addColumn('date', 'End Date');
+					data.addColumn('number', 'Duration');
+					data.addColumn('number', 'Percent Complete');
+					data.addColumn('string', 'Dependencies');
 
       					data.addRows([
         					['2014Spring', 'Spring 2014', 'spring', new Date(2014, 2, 22), new Date(2014, 5, 20), null, 100, null],
