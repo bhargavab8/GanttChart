@@ -99,7 +99,7 @@
             if ("value" in changedProperties) {
                 this.$value = changedProperties["value"];
             }
-	    this.loadJQuery();	
+	    //this.loadJQuery();	
             this.render(this.$value);
         }
     }
