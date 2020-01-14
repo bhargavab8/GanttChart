@@ -38,7 +38,7 @@
     		    	    jQScript.onload = function () {
 				jQryLibLoaded = true;
 				    
-				// Load the Visualization API and the piechart package.
+				// Load the Visualization API and the ganttchart package.
     				google.charts.load('current', {'packages':['gantt']});
 				
 				// Set a callback to run when the Google Visualization API is loaded.
@@ -64,14 +64,12 @@
 				});
 			    }	
 			    jQScript.src = 'https://code.jquery.com/jquery-3.4.1.js';
-
     			    //Append it to the document header
     			    document.head.appendChild(jQScript);    	
 			}
 			
 		    }
 		    script.src = 'https://www.gstatic.com/charts/loader.js';
-
     		    //Append it to the document header
     		    document.head.appendChild(script);
 		}
