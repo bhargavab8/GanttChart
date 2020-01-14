@@ -2,7 +2,7 @@
     "cols": [
       {"id": "ID", "label": "Task ID", "type": "string"},
       {"id": "Name", "label": "Task Name", "type": "string"},
-      {"id": "Resource", "label": "Resource", "type": "string"},
+      {"id": "Resource", "label": "Resource", "type": "string"},	    
       {"id": "Start", "label": "Start Date", "type": "date"},
       {"id": "End", "label": "End Date", "type": "date"},
       {"id": "Duration", "label": "Duration", "type": "number"},
@@ -12,13 +12,53 @@
     "rows": [
       {"c":[
         {"v": "T101"},
-        {"v": "Spring 2014"},
-	{"v": "spring"},
-        {"v": "20140222"},
-        {"v": "20140520"},
+        {"v": "Task 1"},
+	{"v": "A"},      
         {"v": null},
+        {"v": null},
+        {"v": 259200000},
         {"v": 100},
         {"v": null}
+      ]},
+      {"c":[
+        {"v": "T102"},
+        {"v": "Task 2"},
+	{"v": "B"},       
+        {"v": null},
+        {"v": null},
+        {"v": 86400000},
+        {"v": 100},
+        {"v": "T101"}
+      ]}, 
+      {"c":[
+        {"v": "T103"},
+        {"v": "Task 3"},
+	{"v": "C"},       
+        {"v": null},
+        {"v": null},
+        {"v": 86400000},
+        {"v": 20},
+        {"v": "T101"}
+      ]},  
+      {"c":[
+        {"v": "T104"},
+        {"v": "Task 4"},
+	{"v": "D"}, 
+        {"v": null},
+        {"v": null},
+        {"v": 259200000},
+        {"v": 25},
+        {"v": "T101,T102"}
+      ]},
+      {"c":[
+        {"v": "T105"},
+        {"v": "Task 5"},
+	{"v": "E"},       
+        {"v": null},
+        {"v": null},
+        {"v": 86400000},
+        {"v": 0},
+        {"v": "T103,T104"}
       ]}
     ]
-}
+  }
