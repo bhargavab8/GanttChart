@@ -52,7 +52,7 @@
                             for(rowIndex=0;rowIndex<rows.length;rowIndex++){
                                 columns = rows[rowIndex].split(",");
                                 for(colIndex=0;colIndex<columns.length;colIndex++){
-                                    colData = columns[colIndex].splilt(":");
+                                    colData = columns[colIndex].split(":");
                                     dataRows[rowIndex][colIndex] = colData[1];
                                 }                                
                             }
@@ -102,7 +102,7 @@
                    for(rowIndex=0;rowIndex<rows.length;rowIndex++){
                        columns = rows[rowIndex].split(",");
                        for(colIndex=0;colIndex<columns.length;colIndex++){
-                           colData = columns[colIndex].splilt(":");
+                           colData = columns[colIndex].split(":");
                            dataRows[rowIndex][colIndex] = colData[1];
                        }                                
                    }
