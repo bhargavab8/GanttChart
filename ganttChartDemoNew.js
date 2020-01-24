@@ -47,7 +47,7 @@
                             var columns = '';
                             var rowIndex = 0;
                             var colIndex = 0;
-                            var dataRows = [][];
+                            var dataRows;
                             var colData = '';
                             for(rowIndex=0;rowIndex<rows.length;rowIndex++){
                                 columns = rows[rowIndex].split(",");
@@ -97,7 +97,7 @@
                    var columns = '';
                    var rowIndex = 0;
                    var colIndex = 0;
-                   var dataRows = [][];
+                   var dataRows;
                    var colData = '';
                    for(rowIndex=0;rowIndex<noOfRows;rowIndex++){
                        columns = rows[rowIndex].split(",");
