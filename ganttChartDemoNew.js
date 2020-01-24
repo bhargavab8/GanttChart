@@ -35,27 +35,37 @@
                         google.charts.setOnLoadCallback(function() {
                             var data = new google.visualization.DataTable();
                             data.addColumn('string', 'Task ID');
-                            data.addColumn('string', 'Task Name');
-                            data.addColumn('string', 'Resource');
-                            data.addColumn('date', 'Start Date');
-                            data.addColumn('date', 'End Date');
-                            data.addColumn('number', 'Duration');
-                            data.addColumn('number', 'Percent Complete');
-                            data.addColumn('string', 'Dependencies');
+			    data.addColumn('string', 'Task Name');                   
+			    data.addColumn('date', 'Start Date');
+			    data.addColumn('date', 'End Date');
+			    data.addColumn('number', 'Percent Complete');		       
+			    data.addColumn('string', 'Resource');	       
+			    data.addColumn('number', 'Duration');                   
+			    data.addColumn('string', 'Dependencies');
                             
-                            var rows = val.split(";");
-                            var columns = '';
-                            var rowIndex = 0;
-                            var colIndex = 0;
-                            var dataRows;
-                            var colData = '';
-                            for(rowIndex=0;rowIndex<rows.length;rowIndex++){
-                                columns = rows[rowIndex].split(",");
-                                for(colIndex=0;colIndex<columns.length;colIndex++){
-                                    colData = columns[colIndex].split(":");
-                                    dataRows[rowIndex][colIndex] = colData[1];
-                                }                                
-                            }
+			    var rows = val.split(";");
+			    var columns = '';
+			    var rowIndex = 0;
+			    var colIndex = 0;
+			    var dataRows;
+			    var colData = '';
+			    for(rowIndex=0;rowIndex<rows.length;rowIndex++){
+			        columns = rows[rowIndex].split(",");
+			        for(colIndex=0;colIndex<columns.length;colIndex++){
+				    colData = columns[colIndex].split(":");
+				    if(colIndex===0){
+				        dataRows[rowIndex][0] = colData[1];
+				        dataRows[rowIndex][1] = colData[1];
+				    }
+				    else if(colIndex===5){
+				        dataRows[rowIndex][6] = null;
+				        dataRows[rowIndex][7] = null;	   
+				    }		   
+				    else{
+				        dataRows[rowIndex][colIndex+1] = colData[1];
+				    }	   
+			        }                                
+			    }
                             console.log(dataRows); 
       
                             data.addRows(dataRows);
@@ -85,12 +95,12 @@
     		       google.charts.setOnLoadCallback(function() {
                    var data = new google.visualization.DataTable();
                    data.addColumn('string', 'Task ID');
-                   data.addColumn('string', 'Task Name');
-                   data.addColumn('string', 'Resource');
+                   data.addColumn('string', 'Task Name');                   
                    data.addColumn('date', 'Start Date');
                    data.addColumn('date', 'End Date');
-                   data.addColumn('number', 'Duration');
-                   data.addColumn('number', 'Percent Complete');
+	           data.addColumn('number', 'Percent Complete');		       
+		   data.addColumn('string', 'Resource');	       
+                   data.addColumn('number', 'Duration');                   
                    data.addColumn('string', 'Dependencies');
                             
                    var rows = val.split(";");
@@ -103,7 +113,17 @@
                        columns = rows[rowIndex].split(",");
                        for(colIndex=0;colIndex<columns.length;colIndex++){
                            colData = columns[colIndex].split(":");
-                           dataRows[rowIndex][colIndex] = colData[1];
+			   if(colIndex===0){
+			       dataRows[rowIndex][0] = colData[1];
+			       dataRows[rowIndex][1] = colData[1];
+			   }
+			   else if(colIndex===5){
+			       dataRows[rowIndex][6] = null;
+			       dataRows[rowIndex][7] = null;	   
+			   }		   
+                           else{
+			       dataRows[rowIndex][colIndex+1] = colData[1];
+			   }	   
                        }                                
                    }
                    console.log(dataRows); 
