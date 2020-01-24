@@ -99,7 +99,7 @@
                    var colIndex = 0;
                    var dataRows;
                    var colData = '';
-                   for(rowIndex=0;rowIndex<noOfRows;rowIndex++){
+                   for(rowIndex=0;rowIndex<rows.length;rowIndex++){
                        columns = rows[rowIndex].split(",");
                        for(colIndex=0;colIndex<columns.length;colIndex++){
                            colData = columns[colIndex].splilt(":");
