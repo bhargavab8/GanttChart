@@ -77,10 +77,13 @@
 			    }
                             data.addRows(chartData);
 			    var options = {
-                            	height: 400,
+                            	height: 400,				
                                 gantt: {
-					trackHeight: 30,
-                                	criticalPathEnabled: false
+					criticalPathEnabled: false,
+					barCornerRadius: 6,
+          				barHeight: 20,
+          				trackHeight: 28,
+                                	innerGridTrack: {fill: '#fff9f9'}					
                                 }
                             };
 
@@ -89,8 +92,10 @@
                             chart.draw(data, options);
 		            google.visualization.events.addListener(chart,'select', function(){
 				var selection = chart.getSelection();
-				alert(data.wg[selection[0].row].c[6].v);
-				perComp = data.wg[selection[0].row].c[6].v;
+				if(selection.length !== 0){
+				    alert(data.wg[selection[0].row].c[6].v);
+				    perComp = data.wg[selection[0].row].c[6].v;
+				}				
 			    });		
                         });                            
                     }
@@ -148,20 +153,25 @@
 		   }
                    data.addRows(chartData);
 		   var options = {
-                            	height: 400,
-                                gantt: {
-					trackHeight: 30,
-                                	criticalPathEnabled: false
-                                }
-                            };
+                   	height: 400,				
+                        gantt: {
+				criticalPathEnabled: false,
+				barCornerRadius: 6,
+          			barHeight: 20,
+          			trackHeight: 28,
+                                innerGridTrack: {fill: '#fff9f9'}					
+			}
+		   };
 
                    const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttChartNew");
                    var chart = new google.visualization.Gantt(ganttCont);
                    chart.draw(data, options);
 		   google.visualization.events.addListener(chart,'select', function(){
 			var selection = chart.getSelection();
-			alert(data.wg[selection[0].row].c[6].v);
-			perComp = data.wg[selection[0].row].c[6].v;
+			if(selection.length !== 0){
+			    alert(data.wg[selection[0].row].c[6].v);
+			    perComp = data.wg[selection[0].row].c[6].v;
+			}
 		   });
                });		    
 	    }
