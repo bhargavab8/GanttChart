@@ -88,7 +88,8 @@
                             chart.draw(data, options);
 		            google.visualization.events.addListener(chart,'select', function(){
 				var selection = chart.getSelection();
-				alert(data.wg[selection[0].row].c[6].v);				
+				alert(data.wg[selection[0].row].c[6].v);
+				    console.log(this);
 			    });		
                         });                            
                     }
@@ -158,7 +159,8 @@
                    chart.draw(data, options);
 		   google.visualization.events.addListener(chart,'select', function(){
 			var selection = chart.getSelection();
-			alert(data.wg[selection[0].row].c[6].v);				
+			alert(data.wg[selection[0].row].c[6].v);
+			console.log(this);   
 		   });
                });		    
 	    }
