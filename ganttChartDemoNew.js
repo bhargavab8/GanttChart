@@ -77,6 +77,7 @@
                             data.addRows(chartData);
 			    console.log(chartData);
 			    var options = {
+				height: 400,    
                    		gantt: {
                         		criticalPathEnabled: false
 				}
@@ -142,6 +143,7 @@
                    data.addRows(chartData);
 		   console.log(chartData);
                    var options = {
+			height: 400,
                    	gantt: {
                         	criticalPathEnabled: false
 			}
