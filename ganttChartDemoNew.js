@@ -35,47 +35,46 @@
                         google.charts.setOnLoadCallback(function() {
                             var data = new google.visualization.DataTable();
                             data.addColumn('string', 'Task ID');
-			    data.addColumn('string', 'Task Name');                   
-			    data.addColumn('date', 'Start Date');
-			    data.addColumn('date', 'End Date');
-			    data.addColumn('number', 'Percent Complete');		       
-			    data.addColumn('string', 'Resource');	       
-			    data.addColumn('number', 'Duration');                   
-			    data.addColumn('string', 'Dependencies');
+      			    data.addColumn('string', 'Task Name');
+			    data.addColumn('string', 'Resource');
+      			    data.addColumn('date', 'Start Date');
+      			    data.addColumn('date', 'End Date');
+      			    data.addColumn('number', 'Duration');
+      			    data.addColumn('number', 'Percent Complete');
+      			    data.addColumn('string', 'Dependencies');
                             
 			    var rows = val.split(";");
 			    var columns = '';
 			    var rowIndex = 0;
 			    var colIndex = 0;
-			    var dataRows;
+			    var dataRows = [];
+                            var chartData = [];
+
 			    var colData = '';
 			    for(rowIndex=0;rowIndex<rows.length;rowIndex++){
 			        columns = rows[rowIndex].split(",");
+				dataRows = [];
 			        for(colIndex=0;colIndex<columns.length;colIndex++){
 				    colData = columns[colIndex].split(":");
 				    if(colIndex===0){
-				        dataRows[rowIndex][0] = colData[1];
-				        dataRows[rowIndex][1] = colData[1];
+					dataRows.push(colData[1]);
+					dataRows.push(colData[1]);				        
 				    }
-				    else if(colIndex===5){
-				        dataRows[rowIndex][6] = null;
-				        dataRows[rowIndex][7] = null;	   
-				    }		   
-				    else{
-				        dataRows[rowIndex][colIndex+1] = colData[1];
-				    }	   
-			        }                                
+				    else if(colIndex===1){
+                                        dataRows.push(colData[1]);					  
+				    }
+				    else if(colIndex===2 || colIndex===3){
+                                        dataRows.push(new Date(Date.parse(colData[1])));					  
+				    }
+				    else if(colIndex===4){
+					dataRows.push(null);
+ 					dataRows.push(Number(colData[1]));  
+					dataRows.push(null); 
+				    }  
+			        } 
+				chartData.push(dataRows);                               
 			    }
-                            console.log(dataRows); 
-      
-                            data.addRows(dataRows);
-
-                            var options = {
-                            	height: 400,
-                                gantt: {
-                                	trackHeight: 30
-                                }
-                            };
+                            data.addRows(chartData);
 
                             const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttChartNew");
                             var chart = new google.visualization.Gantt(ganttCont);
@@ -87,48 +86,54 @@
                 //Append it to the document header
                 document.head.appendChild(script);
             }
-	          else if(val!==''){
-	              // Load the Visualization API and the ganttchart package.
-    		        google.charts.load('current', {'packages':['gantt']});
+	    else if(val!==''){
+	    	// Load the Visualization API and the ganttchart package.
+    		google.charts.load('current', {'packages':['gantt']});
 				
-		           //Set a callback to run when the Google Visualization API is loaded.
-    		       google.charts.setOnLoadCallback(function() {
+		//Set a callback to run when the Google Visualization API is loaded.
+    		google.charts.setOnLoadCallback(function() {
                    var data = new google.visualization.DataTable();
                    data.addColumn('string', 'Task ID');
-                   data.addColumn('string', 'Task Name');                   
-                   data.addColumn('date', 'Start Date');
-                   data.addColumn('date', 'End Date');
-	           data.addColumn('number', 'Percent Complete');		       
-		   data.addColumn('string', 'Resource');	       
-                   data.addColumn('number', 'Duration');                   
-                   data.addColumn('string', 'Dependencies');
+      		   data.addColumn('string', 'Task Name');
+		   data.addColumn('string', 'Resource');
+      		   data.addColumn('date', 'Start Date');
+      		   data.addColumn('date', 'End Date');
+      		   data.addColumn('number', 'Duration');
+      		   data.addColumn('number', 'Percent Complete');
+      		   data.addColumn('string', 'Dependencies');
                             
-                   var rows = val.split(";");
-                   var columns = '';
-                   var rowIndex = 0;
-                   var colIndex = 0;
-                   var dataRows;
-                   var colData = '';
-                   for(rowIndex=0;rowIndex<rows.length;rowIndex++){
-                       columns = rows[rowIndex].split(",");
-                       for(colIndex=0;colIndex<columns.length;colIndex++){
-                           colData = columns[colIndex].split(":");
+		   var rows = val.split(";");
+		   var columns = '';
+		   var rowIndex = 0;
+		   var colIndex = 0;
+		   var dataRows = [];
+                   var chartData = [];
+
+		   var colData = '';
+		   for(rowIndex=0;rowIndex<rows.length;rowIndex++){
+		       columns = rows[rowIndex].split(",");
+		       dataRows = [];
+		       for(colIndex=0;colIndex<columns.length;colIndex++){
+		 	   colData = columns[colIndex].split(":");
 			   if(colIndex===0){
-			       dataRows[rowIndex][0] = colData[1];
-			       dataRows[rowIndex][1] = colData[1];
+			       dataRows.push(colData[1]);
+			       dataRows.push(colData[1]);				        
 			   }
-			   else if(colIndex===5){
-			       dataRows[rowIndex][6] = null;
-			       dataRows[rowIndex][7] = null;	   
-			   }		   
-                           else{
-			       dataRows[rowIndex][colIndex+1] = colData[1];
-			   }	   
-                       }                                
-                   }
-                   console.log(dataRows); 
-      
-                   data.addRows(dataRows);
+			   else if(colIndex===1){
+                               dataRows.push(colData[1]);					  
+			   }
+			   else if(colIndex===2 || colIndex===3){
+                               dataRows.push(new Date(Date.parse(colData[1])));					  
+			   }
+			   else if(colIndex===4){
+			       dataRows.push(null);
+ 			       dataRows.push(Number(colData[1]));  
+			       dataRows.push(null); 
+			   }  
+		       }    
+		       chartData.push(dataRows);                               
+		   }
+                   data.addRows(chartData);
 
                    var options = {
                        height: 400,
@@ -141,7 +146,7 @@
                    var chart = new google.visualization.Gantt(ganttCont);
                    chart.draw(data, options);
                });		    
-	          }
+	    }
         }
 
         onCustomWidgetBeforeUpdate(changedProperties) {
@@ -152,8 +157,7 @@
             if ("value" in changedProperties) {
                 this.$value = changedProperties["value"];
             }
-	    //this.loadJQuery();	
-            this.render(this.$value);
+	    this.render(this.$value);
         }
     }
     customElements.define("com-demo-gantt-chart", GanttChartNew);
