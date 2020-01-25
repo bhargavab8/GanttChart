@@ -78,6 +78,7 @@
 			    var options = {
                             	height: 400,
                                 gantt: {
+					trackHeight: 30,
                                 	criticalPathEnabled: false
                                 }
                             };
@@ -143,6 +144,7 @@
 		   var options = {
                             	height: 400,
                                 gantt: {
+					trackHeight: 30,
                                 	criticalPathEnabled: false
                                 }
                             };
