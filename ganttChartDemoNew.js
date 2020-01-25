@@ -81,11 +81,8 @@
                                 gantt: {
 					criticalPathEnabled: false,
 					barCornerRadius: 6,
-          				barHeight: 20,
-          				trackHeight: 28,
-                                	labelStyle: {
-  						fontName: 'Arial,Helvetica,sans-serif'
-					}				
+          				barHeight: 18,
+          				trackHeight: 26				
                                 }
                             };
 
@@ -159,11 +156,8 @@
                         gantt: {
 				criticalPathEnabled: false,
 				barCornerRadius: 6,
-          			barHeight: 20,
-          			trackHeight: 28,
-                                labelStyle: {
-  					fontName: 'Arial,Helvetica,sans-serif'
-				}					
+          			barHeight: 18,
+          			trackHeight: 26					
 			}
 		   };
 
