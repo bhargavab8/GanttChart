@@ -83,7 +83,9 @@
 					barCornerRadius: 6,
           				barHeight: 20,
           				trackHeight: 28,
-                                	innerGridTrack: {fill: '#fff9f9'}					
+                                	labelStyle: {
+  						fontName: 'Arial,Helvetica,sans-serif'
+					}				
                                 }
                             };
 
@@ -159,7 +161,9 @@
 				barCornerRadius: 6,
           			barHeight: 20,
           			trackHeight: 28,
-                                innerGridTrack: {fill: '#fff9f9'}					
+                                labelStyle: {
+  					fontName: 'Arial,Helvetica,sans-serif'
+				}					
 			}
 		   };
 
