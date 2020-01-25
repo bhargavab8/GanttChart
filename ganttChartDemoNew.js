@@ -5,6 +5,7 @@
 	  `;
     
     let gLibLoaded = false;
+    let perComp = 0;
     
     class GanttChartNew extends HTMLElement {
 		    constructor() {
@@ -89,7 +90,8 @@
 		            google.visualization.events.addListener(chart,'select', function(){
 				var selection = chart.getSelection();
 				alert(data.wg[selection[0].row].c[6].v);
-				    console.log(this);
+				console.log(gLibLoaded);
+				perComp = data.wg[selection[0].row].c[6].v;
 			    });		
                         });                            
                     }
@@ -160,7 +162,8 @@
 		   google.visualization.events.addListener(chart,'select', function(){
 			var selection = chart.getSelection();
 			alert(data.wg[selection[0].row].c[6].v);
-			console.log(this);   
+			console.log(gLibLoaded); 
+			perComp = data.wg[selection[0].row].c[6].v;
 		   });
                });		    
 	    }
