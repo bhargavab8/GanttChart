@@ -90,7 +90,6 @@
 		            google.visualization.events.addListener(chart,'select', function(){
 				var selection = chart.getSelection();
 				alert(data.wg[selection[0].row].c[6].v);
-				console.log(gLibLoaded);
 				perComp = data.wg[selection[0].row].c[6].v;
 			    });		
                         });                            
@@ -162,11 +161,11 @@
 		   google.visualization.events.addListener(chart,'select', function(){
 			var selection = chart.getSelection();
 			alert(data.wg[selection[0].row].c[6].v);
-			console.log(gLibLoaded); 
 			perComp = data.wg[selection[0].row].c[6].v;
 		   });
                });		    
 	    }
+	    //this.$perDone = perComp;
         }
 
         onCustomWidgetBeforeUpdate(changedProperties) {
