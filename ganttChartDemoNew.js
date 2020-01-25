@@ -75,13 +75,12 @@
 				chartData.push(dataRows);                               
 			    }
                             data.addRows(chartData);
-			    console.log(chartData);
 			    var options = {
-				height: 400,    
-                   		gantt: {
-                        		criticalPathEnabled: false
-				}
-		   	    };
+                            	height: 400,
+                                gantt: {
+                                	trackHeight: 30
+                                }
+                            };
 
                             const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttChartNew");
                             var chart = new google.visualization.Gantt(ganttCont);
@@ -141,13 +140,12 @@
 		       chartData.push(dataRows);                               
 		   }
                    data.addRows(chartData);
-		   console.log(chartData);
-                   var options = {
-			height: 400,
-                   	gantt: {
-                        	criticalPathEnabled: false
-			}
-		   };
+		   var options = {
+                            	height: 400,
+                                gantt: {
+                                	trackHeight: 30
+                                }
+                            };
 
                    const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttChartNew");
                    var chart = new google.visualization.Gantt(ganttCont);
