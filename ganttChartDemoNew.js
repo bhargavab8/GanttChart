@@ -86,6 +86,10 @@
                             const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttChartNew");
                             var chart = new google.visualization.Gantt(ganttCont);
                             chart.draw(data, options);
+		            google.visualization.events.addListener(chart,'select', function(){
+				var selection = chart.getSelection();
+				alert(data.wg[selection[0].row].c[6].v);				
+			    });		
                         });                            
                     }
                 }
@@ -152,6 +156,10 @@
                    const ganttCont = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#ganttChartNew");
                    var chart = new google.visualization.Gantt(ganttCont);
                    chart.draw(data, options);
+		   google.visualization.events.addListener(chart,'select', function(){
+			var selection = chart.getSelection();
+			alert(data.wg[selection[0].row].c[6].v);				
+		   });
                });		    
 	    }
         }
