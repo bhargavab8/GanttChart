@@ -75,7 +75,7 @@
 				chartData.push(dataRows);                               
 			    }
                             data.addRows(chartData);
-				
+			    console.log(chartData);
 			    var options = {
                    		gantt: {
                         		criticalPathEnabled: false
@@ -140,7 +140,7 @@
 		       chartData.push(dataRows);                               
 		   }
                    data.addRows(chartData);
-
+		   console.log(chartData);
                    var options = {
                    	gantt: {
                         	criticalPathEnabled: false
