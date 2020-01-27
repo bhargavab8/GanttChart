@@ -35,12 +35,16 @@
                     chartscript.type = 'text/javascript';
                     chartscript.async = true;
 		    chartscript.onload = function () {
-			amChartsLibLoaded = 1;
-			am4core.ready(function() {
-		            am4core.useTheme(am4themes_animated);
-		            // create chart
-		            var chart = am4core.create("amChartGaugediv", am4charts.GaugeChart);
-		            chart.innerRadius = am4core.percent(82);
+			const chartanmscript = document.createElement('script');
+                    	chartanmscript.type = 'text/javascript';
+                    	chartanmscript.async = true;
+		    	chartanmscript.onload = function () {
+			    amChartsLibLoaded = 1;
+			    am4core.ready(function() {
+		                am4core.useTheme(am4themes_animated);
+				// create chart
+				var chart = am4core.create("amChartGaugediv", am4charts.GaugeChart);
+				chart.innerRadius = am4core.percent(82);
 
 				/**
 				* Normal axis
@@ -113,8 +117,11 @@
 				    range1.value = ev.target.value;
 				    axis2.invalidate();
 				});
-
-	          	});    
+			    });
+			}
+			chartanmscript.src = 'https://www.amcharts.com/lib/4/themes/animated.js';
+    		    	//Append it to the document header
+    		    	document.head.appendChild(chartanmscript); 
 		    }
 		    chartscript.src = 'https://www.amcharts.com/lib/4/charts.js';
     		    //Append it to the document header
