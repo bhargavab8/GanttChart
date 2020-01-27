@@ -33,7 +33,7 @@
 		perComp = perComp+Number(rows[rowIndex]);
 	    }
  	    if(rows.length !== 0){
-	       perComp = perComp/rows.length;
+	       perComp = Math.round(perComp/rows.length);
 	    }
 		
 	    if(amChartsLibLoaded === 0){
