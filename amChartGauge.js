@@ -20,6 +20,16 @@
 	}
 	    
         render(val) {
+	    var rows = val.split(",");
+	    var rowIndex = 0;
+	    var perComp = 0;
+	    for(rowIndex=0;rowIndex<rows.length;rowIndex++){
+		perComp = perComp+Number(rows[rowIndex]);
+	    }
+ 	    if(rows.length !== 0){
+	       perComp = perComp/rows.length;
+	    }
+		
 	    if(amChartsLibLoaded === 0){
 		const script = document.createElement('script');
                 script.type = 'text/javascript';
@@ -95,7 +105,7 @@
 				label.y = am4core.percent(100);
 				label.horizontalCenter = "middle";
 				label.verticalCenter = "bottom";
-				label.text = val+"%";
+				label.text = perComp+"%";
 
 				/**
 				* Hand
@@ -105,7 +115,7 @@
 				hand.innerRadius = am4core.percent(20);
 				hand.startWidth = 6;
 				hand.pin.disabled = true;
-				hand.value = Number(val);
+				hand.value = perComp;
 
 				hand.events.on("propertychanged", function(ev) {
 				    range0.endValue = ev.target.value;
@@ -188,7 +198,7 @@
 				label.y = am4core.percent(100);
 				label.horizontalCenter = "middle";
 				label.verticalCenter = "bottom";
-				label.text = val+"%";
+				label.text = perComp+"%";
 
 				/**
 				* Hand
@@ -198,7 +208,7 @@
 				hand.innerRadius = am4core.percent(20);
 				hand.startWidth = 6;
 				hand.pin.disabled = true;
-				hand.value = Number(val);
+				hand.value = perComp;
 
 				hand.events.on("propertychanged", function(ev) {
 				    range0.endValue = ev.target.value;
