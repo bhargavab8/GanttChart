@@ -24,22 +24,22 @@
 		        });
 		        this._props = {};
             
-            this.loadAMChartLibs('https://www.amcharts.com/lib/4/core.js');
+                  this.loadAMChartLibs('https://www.amcharts.com/lib/4/core.js');
 	          this.loadAMChartLibs('https://www.amcharts.com/lib/4/charts.js');
 	          this.loadAMChartLibs('https://www.amcharts.com/lib/4/themes/animated.js');
 	      }
 	
 	      loadAMChartLibs(libURL){
 	          if(amChartsLibLoaded <= 3){
-		            const script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.async = true;
-                script.onload = function () {
-                    amChartsLibLoaded = amChartsLibLoaded + 1;		    
-		            }
-		            script.src = libURL;
-    		        //Append it to the document header
-    		        document.head.appendChild(script); 			    
+		      const script = document.createElement('script');
+                      script.type = 'text/javascript';
+                      script.async = false;
+                      script.onload = function () {
+                      		amChartsLibLoaded = amChartsLibLoaded + 1;		    
+		      }
+		      script.src = libURL;
+    		      //Append it to the document header
+    		      document.head.appendChild(script); 			    
 	          }
 	      }
 	    
