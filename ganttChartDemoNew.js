@@ -173,7 +173,7 @@
 		   });
                });		    
 	    }
-	    //this.$perDone = perComp;
+	    this.$percentdone = perComp;
         }
 
         onCustomWidgetBeforeUpdate(changedProperties) {
