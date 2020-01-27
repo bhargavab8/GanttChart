@@ -173,7 +173,6 @@
 		   });
                });		    
 	    }
-	    this.$percentdone = perComp;
         }
 
         onCustomWidgetBeforeUpdate(changedProperties) {
@@ -185,6 +184,7 @@
                 this.$value = changedProperties["value"];
             }
 	    this.render(this.$value);
+	    this.$percentdone = perComp;	
         }
     }
     customElements.define("com-demo-gantt-chart", GanttChartNew);
