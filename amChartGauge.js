@@ -1,7 +1,13 @@
 (function() { 
     let template = document.createElement("template");
 	  template.innerHTML = `		    
-		  <div id="amChartGaugediv"></div>
+		<style>
+		#amChartGaugediv{
+  			width: 100%;
+  			height: 400px;
+		}
+		</style>  
+		<div id="amChartGaugediv"></div>
 	  `;
     
     let amChartsLibLoaded = 0;
