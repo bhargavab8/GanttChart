@@ -29,7 +29,7 @@
 	    if(amChartsLibLoaded === 0){
 		const script = document.createElement('script');
                 script.type = 'text/javascript';
-                script.async = false;
+                script.async = true;
                 script.onload = function () {
 		    script.src = 'https://www.amcharts.com/lib/4/charts.js';
     		    //Append it to the document header
