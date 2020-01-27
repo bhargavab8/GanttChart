@@ -105,7 +105,7 @@
 				hand.innerRadius = am4core.percent(20);
 				hand.startWidth = 6;
 				hand.pin.disabled = true;
-				hand.value = val;
+				hand.value = Number(val);
 
 				hand.events.on("propertychanged", function(ev) {
 				    range0.endValue = ev.target.value;
@@ -198,7 +198,7 @@
 				hand.innerRadius = am4core.percent(20);
 				hand.startWidth = 6;
 				hand.pin.disabled = true;
-				hand.value = val;
+				hand.value = Number(val);
 
 				hand.events.on("propertychanged", function(ev) {
 				    range0.endValue = ev.target.value;
