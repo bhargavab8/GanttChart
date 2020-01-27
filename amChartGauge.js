@@ -136,5 +136,5 @@
             this.render(this.$value);
         }
     }
-    customElements.define("com-demo-amGauge-chart", AMChartGaugeNew);
+    customElements.define("com-demo-amchart-gauge", AMChartGaugeNew);
 })();
