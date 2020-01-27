@@ -31,10 +31,10 @@
                 script.type = 'text/javascript';
                 script.async = true;
                 script.onload = function () {
-		    script.src = 'https://www.amcharts.com/lib/4/charts.js';
-    		    //Append it to the document header
-    		    document.head.appendChild(script); 
-		    script.onload = function () {
+		    const chartscript = document.createElement('script');
+                    chartscript.type = 'text/javascript';
+                    chartscript.async = true;
+		    chartscript.onload = function () {
 			amChartsLibLoaded = 1;
 			am4core.ready(function() {
 		            am4core.useTheme(am4themes_animated);
@@ -115,7 +115,10 @@
 				});
 
 	          	});    
-		    }                      				    
+		    }
+		    chartscript.src = 'https://www.amcharts.com/lib/4/charts.js';
+    		    //Append it to the document header
+    		    document.head.appendChild(chartscript); 
 		}
 		script.src = 'https://www.amcharts.com/lib/4/core.js';
     		//Append it to the document header
