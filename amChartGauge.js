@@ -1,12 +1,6 @@
 (function() { 
     let template = document.createElement("template");
-	  template.innerHTML = `
-		  <style>
-			#amChartGaugediv{
-  				width: 400px;
-  				height: 400px;
-			}
-		  </style>    
+	  template.innerHTML = `		    
 		  <div id="amChartGaugediv"></div>
 	  `;
     
