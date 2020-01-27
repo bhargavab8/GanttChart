@@ -43,7 +43,8 @@
 			    am4core.ready(function() {
 		                am4core.useTheme(am4themes_animated);
 				// create chart
-				var chart = am4core.create("amChartGaugediv", am4charts.GaugeChart);
+				const amChartGauge = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#amChartGaugediv");    
+				var chart = am4core.create(amChartGauge, am4charts.GaugeChart);
 				chart.innerRadius = am4core.percent(82);
 
 				/**
@@ -135,7 +136,8 @@
 		    am4core.ready(function() {
 		            am4core.useTheme(am4themes_animated);
 		            // create chart
-		            var chart = am4core.create("amChartGaugediv", am4charts.GaugeChart);
+		            const amChartGauge = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#amChartGaugediv");    
+			    var chart = am4core.create(amChartGauge, am4charts.GaugeChart);
 		            chart.innerRadius = am4core.percent(82);
 
 				/**
