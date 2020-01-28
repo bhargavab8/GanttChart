@@ -94,6 +94,7 @@
 				if(selection.length !== 0){
 				    alert(data.wg[selection[0].row].c[6].v);
 				    perComp = data.wg[selection[0].row].c[6].v;
+				    percentDone = perComp;	
 				}				
 			    });		
                         });                            
@@ -169,6 +170,7 @@
 			if(selection.length !== 0){
 			    alert(data.wg[selection[0].row].c[6].v);
 			    perComp = data.wg[selection[0].row].c[6].v;
+			    percentDone = perComp;
 			}
 		   });
                });		    
