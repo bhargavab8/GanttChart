@@ -92,11 +92,13 @@
                             chart.draw(data, options);
 		            google.visualization.events.addListener(chart,'select', function(){
 				var selection = chart.getSelection();
+				var selValuePlaceholder = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#selectedBar");	
 				if(selection.length !== 0){
-				    alert(data.wg[selection[0].row].c[6].v);
-				    perComp = data.wg[selection[0].row].c[6].v;	
-				    var selValuePlaceholder = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#selectedBar");	
-				    selValuePlaceholder.innerText = perComp;					
+			    		perComp = data.wg[selection[0].row].c[6].v;
+			    		selValuePlaceholder.innerText = perComp;	
+				}
+				else{
+			    		selValuePlaceholder.innerText = '';
 				}				
 			    });		
                         });                            
@@ -169,11 +171,13 @@
                    chart.draw(data, options);
 		   google.visualization.events.addListener(chart,'select', function(){
 			var selection = chart.getSelection();
+			var selValuePlaceholder = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#selectedBar");	
 			if(selection.length !== 0){
-			    alert(data.wg[selection[0].row].c[6].v);
 			    perComp = data.wg[selection[0].row].c[6].v;
-			    var selValuePlaceholder = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#selectedBar");	
 			    selValuePlaceholder.innerText = perComp;	
+			}
+			else{
+			    selValuePlaceholder.innerText = '';
 			}
 		   });
                });		    
