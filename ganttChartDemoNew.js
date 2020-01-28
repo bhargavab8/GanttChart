@@ -2,6 +2,7 @@
     let template = document.createElement("template");
 	  template.innerHTML = `
 		    <div id="ganttChartNew"></div>
+		    <div id="selectedBar" hidden></div>
 	  `;
     
     let gLibLoaded = false;
@@ -94,6 +95,8 @@
 				if(selection.length !== 0){
 				    alert(data.wg[selection[0].row].c[6].v);
 				    perComp = data.wg[selection[0].row].c[6].v;	
+				    var selValuePlaceholder = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#selectedBar");	
+				    selValuePlaceholder.appendChild(perComp);					
 				}				
 			    });		
                         });                            
@@ -169,6 +172,8 @@
 			if(selection.length !== 0){
 			    alert(data.wg[selection[0].row].c[6].v);
 			    perComp = data.wg[selection[0].row].c[6].v;
+			    var selValuePlaceholder = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#selectedBar");	
+			    selValuePlaceholder.appendChild(perComp);	
 			}
 		   });
                });		    
