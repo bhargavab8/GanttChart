@@ -26,9 +26,13 @@
 	}
 	    
         render(val) {
-	    var rows = val.split(",");
-	    var rowIndex = 0;
 	    var perComp = 0;
+	    var selValuePlaceholder = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#selectedBar");
+            if(selValuePlaceholder && selValuePlaceholder.innerText && selValuePlaceholder.innerText !=''){
+		perComp = Number(selValuePlaceholder.innerText);
+	    }
+	    var rows = val.split(",");
+	    var rowIndex = 0;	    
 	    for(rowIndex=0;rowIndex<rows.length;rowIndex++){
 		perComp = perComp+Number(rows[rowIndex]);
 	    }
