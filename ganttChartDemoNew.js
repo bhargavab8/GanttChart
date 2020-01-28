@@ -96,7 +96,7 @@
 				    alert(data.wg[selection[0].row].c[6].v);
 				    perComp = data.wg[selection[0].row].c[6].v;	
 				    var selValuePlaceholder = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#selectedBar");	
-				    selValuePlaceholder.innerText(perComp);					
+				    selValuePlaceholder.innerText = perComp;					
 				}				
 			    });		
                         });                            
@@ -173,7 +173,7 @@
 			    alert(data.wg[selection[0].row].c[6].v);
 			    perComp = data.wg[selection[0].row].c[6].v;
 			    var selValuePlaceholder = document.querySelector(".sapCustomWidgetWebComponent").shadowRoot.querySelector("#selectedBar");	
-			    selValuePlaceholder.innerText(perComp);	
+			    selValuePlaceholder.innerText = perComp;	
 			}
 		   });
                });		    
