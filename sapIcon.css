@@ -1,10 +1,10 @@
 /* SAP Fiori Icons */
 @font-face {
-  font-family: 'SAP Fiori Icons';
+  font-family: 'EYInterstate Regular';
   src:
     url('https://vishwapkm-ey.github.io/GanttChart/SAP-icons.woff2') format('woff2'),
     url('https://vishwapkm-ey.github.io/GanttChart/SAP-icons.woff') format('woff'),
-    url('https://vishwapkm-ey.github.io/GanttChart/SAP-icons.ttf') format('truetype');
+    url('https://vishwapkm-ey.github.io/GanttChart/EYInterstate-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
