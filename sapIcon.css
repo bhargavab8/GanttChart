@@ -2,8 +2,6 @@
 @font-face {
   font-family: 'EYInterstate Regular';
   src:
-    url('https://vishwapkm-ey.github.io/GanttChart/SAP-icons.woff2') format('woff2'),
-    url('https://vishwapkm-ey.github.io/GanttChart/SAP-icons.woff') format('woff'),
     url('https://vishwapkm-ey.github.io/GanttChart/EYInterstate-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
