@@ -13,4 +13,20 @@
     url('https://vishwapkm-ey.github.io/GanttChart/EYInterstate-Light.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+},
+/* EYInterstate Bold Font */
+@font-face {
+  font-family: 'EYInterstate Bold';
+  src:
+    url('https://vishwapkm-ey.github.io/GanttChart/EYInterstate-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+},
+/* EYInterstate Light Italic Font */
+@font-face {
+  font-family: 'EYInterstate Bold';
+  src:
+    url('https://vishwapkm-ey.github.io/GanttChart/EYInterstate-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
 }
