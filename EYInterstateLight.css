@@ -1,0 +1,32 @@
+/* EYInterstate Light Font */
+@font-face {
+  font-family: 'EYInterstate Light';
+  src:
+    url('https://vishwapkm-ey.github.io/GanttChart/EYInterstate-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+},
+/* EYInterstate Light Bold Font */
+@font-face {
+  font-family: 'EYInterstate Light Bold';
+  src:
+    url('https://vishwapkm-ey.github.io/GanttChart/EYInterstate-Light.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+},
+/* EYInterstate Light Italic Font */
+@font-face {
+  font-family: 'EYInterstate Light Italic';
+  src:
+    url('https://vishwapkm-ey.github.io/GanttChart/EYInterstate-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+},
+/* EYInterstate Light Italic Bold Font */
+@font-face {
+  font-family: 'EYInterstate Light Italic Bold';
+  src:
+    url('https://vishwapkm-ey.github.io/GanttChart/EYInterstate-Light.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
