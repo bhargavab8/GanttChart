@@ -6,25 +6,25 @@
   font-weight: normal;
   font-style: normal;
 },
-/* EYInterstate Light Font */
+/* EYInterstate Regular Bold Font */
 @font-face {
-  font-family: 'EYInterstate Regular';
+  font-family: 'EYInterstate Regular Bold';
   src:
     url('https://vishwapkm-ey.github.io/GanttChart/EYInterstate-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 },
-/* EYInterstate Bold Font */
+/* EYInterstate Regular Italic Font */
 @font-face {
-  font-family: 'EYInterstate Regular';
+  font-family: 'EYInterstate Regular Italic';
   src:
     url('https://vishwapkm-ey.github.io/GanttChart/EYInterstate-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
 },
-/* EYInterstate Light Italic Font */
+/* EYInterstate Regular Italic Bold Font */
 @font-face {
-  font-family: 'EYInterstate Regular';
+  font-family: 'EYInterstate Regular Italic Bold';
   src:
     url('https://vishwapkm-ey.github.io/GanttChart/EYInterstate-Regular.ttf') format('truetype');
   font-weight: 400;
