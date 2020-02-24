@@ -1,6 +1,6 @@
 /* latin */
 @font-face {
-  font-family: 'EYInterstate';
+  font-family: 'EYInterstate Regular';
   font-style: normal;
   font-weight: normal; 
   src: url(http://vishwapkm-ey.github.io/GanttChart/EYInterstate-Regular.ttf) format('truetype');
@@ -16,16 +16,16 @@
 
 /* latin */
 @font-face {
-  font-family: 'EYInterstate Italic';
-  font-style: italic;
+  font-family: 'EYInterstate Light';
+  font-style: normal;
   font-weight: normal; 
-  src: url(http://vishwapkm-ey.github.io/GanttChart/EYInterstate-Regular.ttf) format('truetype');
+  src: url(http://vishwapkm-ey.github.io/GanttChart/EYInterstate-Light.ttf) format('truetype');
 } 
 
 /* latin */
 @font-face {
-  font-family: 'EYInterstate Bold Italic';
+  font-family: 'EYInterstate Light Italic';
   font-style: italic;
-  font-weight: 400; 
-  src: url(http://vishwapkm-ey.github.io/GanttChart/EYInterstate-Regular.ttf) format('truetype');
+  font-weight: normal; 
+  src: url(http://vishwapkm-ey.github.io/GanttChart/EYInterstate-Light.ttf) format('truetype');
 } 
