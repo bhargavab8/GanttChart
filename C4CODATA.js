@@ -4,6 +4,7 @@
 		    <div id="odataContent"></div>
 	  `;
     
+    let odataContentDiv;
     class C4CODATANew extends HTMLElement {
 		    constructor() {
 			      super(); 
