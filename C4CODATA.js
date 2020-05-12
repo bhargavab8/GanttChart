@@ -26,7 +26,7 @@
 		var rawData='';
 		$.each(jsonData.d.results, function( key, val ) {
     			console.log(val.C_x1ANx34e0f28ff0ceb33);
-			rawData = rawData+"<div>Row Number: "+rowIndex+"</div>"+val.C_x1ANx34e0f28ff0ceb33;			
+			rawData = rawData+"<div style='font-size:14pt;font-weight:bold;'>Row Number: "+rowIndex+"</div>"+val.C_x1ANx34e0f28ff0ceb33+"<div></div>";			
 			rowIndex=rowIndex+1;
   		});
 		odataContentDiv.innerHTML=rawData;    
