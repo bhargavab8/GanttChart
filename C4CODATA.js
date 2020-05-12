@@ -25,7 +25,7 @@
 		var rowIndex=1;
 		$.each(jsonData.d.results, function( key, val ) {
     			console.log(val.C_x1ANx34e0f28ff0ceb33);
-			odataContentDiv.append(val.C_x1ANx34e0f28ff0ceb33 + " ");
+			odataContentDiv.innerHTML=val.C_x1ANx34e0f28ff0ceb33;
 			rowIndex=rowIndex+1;
   		});
             }).fail(function(){console.log("Failed")});
