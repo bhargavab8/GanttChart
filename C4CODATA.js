@@ -22,8 +22,11 @@
             var odataURL = "https://my348282.crm.ondemand.com/sap/c4c/odata/analytics/ds/Bpcsdb.svc/Bpcsdb?$select=C_x1ANx34e0f28ff0ceb33&$format=json";
             $.getJSON(odataURL).done(function (jsonData) {
                 console.log(jsonData);
-		$.each(jsonData, function( key, val ) {
-    			console.log(val);
+		var rowIndex=1;
+		$.each(jsonData.d.results, function( key, val ) {
+    			console.log(val.C_x1ANx34e0f28ff0ceb33);
+			odataContentDiv.append("<div>Row "+rowIndex+"</div>"+val.C_x1ANx34e0f28ff0ceb33);
+			rowIndex=rowIndex+1;
   		});
             }).fail(function(){console.log("Failed")});
         }
