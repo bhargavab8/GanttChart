@@ -19,7 +19,7 @@
 	    
         render(value) {
             var odataURL = "https://my348282.crm.ondemand.com/sap/c4c/odata/analytics/ds/Bpcsdb.svc/Bpcsdb?$select=C_x1ANx34e0f28ff0ceb33&$format=json";
-            $.getJSON(odataURL, { user: "_SAC", password: "Welcome1" }).done(function (jsonData) {
+            $.getJSON("https://vishwapkm-ey.github.io/GanttChart/gGanttExample.json").done(function (jsonData) {
                 console.log(jsonData);
 		$.each(jsonData, function( key, val ) {
     			console.log(val);
